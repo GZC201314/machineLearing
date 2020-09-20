@@ -10,7 +10,7 @@ def loadDataSet(fileName):      #general function to parse tab -delimited floats
     fr = open(fileName)
     for line in fr.readlines():
         curLine = line.strip().split('\t')
-        fltLine = map(float,curLine) #map all elements to float()
+        fltLine = list(map(float,curLine)) #map all elements to float()
         dataMat.append(fltLine)
     return dataMat
 
@@ -105,7 +105,7 @@ def prune(tree, testData):
         treeMean = (tree['left']+tree['right'])/2.0
         errorMerge = sum(power(testData[:,-1] - treeMean,2))
         if errorMerge < errorNoMerge: 
-            print "merging"
+            print("merging")
             return treeMean
         else: return tree
     else: return tree

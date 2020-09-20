@@ -23,7 +23,7 @@ varPercentage = sortedEigVals/total*100
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
-ax.plot(range(1, 21), varPercentage[:20], marker='^')
+ax.plot(list(range(1, 21)), varPercentage[:20], marker='^')
 plt.xlabel('Principal Component Number')
 plt.ylabel('Percentage of Variance')
 plt.show()

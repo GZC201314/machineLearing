@@ -13,7 +13,9 @@ Output:     the most popular class label
 '''
 from numpy import *
 import operator
+import os
 from os import listdir
+
 
 # kNN算法 分类器
 def classify0(inX, dataSet, labels, k):
@@ -87,6 +89,7 @@ def img2vector(filename):
 
 def handwritingClassTest():
     hwLabels = []
+    print(os.path.abspath('.'))
     trainingFileList = listdir('trainingDigits')           #load the training set
     m = len(trainingFileList)
     trainingMat = zeros((m,1024))
@@ -111,4 +114,4 @@ def handwritingClassTest():
     print("\nthe total error rate is: %f" % (errorCount/float(mTest)))
 
 # datingClassTest()
-handwritingClassTest()
+# handwritingClassTest()

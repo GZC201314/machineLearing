@@ -26,7 +26,7 @@ def seqPegasos(dataSet, labels, lam, T):
             w = (1.0 - 1/t)*w + eta*labels[i]*dataSet[i,:]
         else:
             w = (1.0 - 1/t)*w
-        print w
+        print(w)
     return w
         
 def predict(w, x):
@@ -34,7 +34,7 @@ def predict(w, x):
 
 def batchPegasos(dataSet, labels, lam, T, k):
     m,n = shape(dataSet); w = zeros(n); 
-    dataIndex = range(m)
+    dataIndex = list(range(m))
     for t in range(1, T+1):
         wDelta = mat(zeros(n)) #reset wDelta
         eta = 1.0/(lam*t)
@@ -51,7 +51,7 @@ datArr,labelList = loadDataSet('testSet.txt')
 datMat = mat(datArr)
 #finalWs = seqPegasos(datMat, labelList, 2, 5000)
 finalWs = batchPegasos(datMat, labelList, 2, 50, 100)
-print finalWs
+print(finalWs)
 
 import matplotlib
 import matplotlib.pyplot as plt

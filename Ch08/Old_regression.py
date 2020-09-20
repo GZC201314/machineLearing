@@ -22,7 +22,7 @@ def standRegres(xArr,yArr):
     xMat = mat(xArr); yMat = mat(yArr).T
     xTx = xMat.T*xMat
     if linalg.det(xTx) == 0.0:
-        print "This matrix is singular, cannot do inverse"
+        print("This matrix is singular, cannot do inverse")
         return
     ws = xTx.I * (xMat.T*yMat)
     return ws
@@ -36,7 +36,7 @@ def lwlr(testPoint,xArr,yArr,k=1.0):
         weights[j,j] = exp(diffMat*diffMat.T/(-2.0*k**2))
     xTx = xMat.T * (weights * xMat)
     if linalg.det(xTx) == 0.0:
-        print "This matrix is singular, cannot do inverse"
+        print("This matrix is singular, cannot do inverse")
         return
     ws = xTx.I * (xMat.T * (weights * yMat))
     return testPoint * ws
@@ -63,7 +63,7 @@ def ridgeRegres(xMat,yMat,lam=0.2):
     xTx = xMat.T*xMat
     denom = xTx + eye(shape(xMat)[1])*lam
     if linalg.det(denom) == 0.0:
-        print "This matrix is singular, cannot do inverse"
+        print("This matrix is singular, cannot do inverse")
         return
     ws = denom.I * (xMat.T*yMat)
     return ws
@@ -130,7 +130,7 @@ def scrapePage(inFile,outFile,yr,numPce,origPrc):
             newFlag = 0.0
         soldUnicde = currentRow[0].findAll('td')[3].findAll('span')
         if len(soldUnicde)==0:
-            print "item #%d did not sell" % i
+            print("item #%d did not sell" % i)
         else:
             soldPrice = currentRow[0].findAll('td')[4]
             priceStr = soldPrice.text
@@ -138,7 +138,7 @@ def scrapePage(inFile,outFile,yr,numPce,origPrc):
             priceStr = priceStr.replace(',','') #strips out ,
             if len(soldPrice)>1:
                 priceStr = priceStr.replace('Free shipping', '') #strips out Free Shipping
-            print "%s\t%d\t%s" % (priceStr,newFlag,title)
+            print("%s\t%d\t%s" % (priceStr,newFlag,title))
             fw.write("%d\t%d\t%d\t%f\t%s\n" % (yr,numPce,newFlag,origPrc,priceStr))
         i += 1
         currentRow = soup.findAll('table', r="%d" % i)
@@ -154,7 +154,7 @@ def setDataCollect():
     
 def crossValidation(xArr,yArr,numVal=10):
     m = len(yArr)                           
-    indexList = range(m)
+    indexList = list(range(m))
     errorMat = zeros((numVal,30))#create error mat 30columns numVal rows
     for i in range(numVal):
         trainX=[]; trainY=[]
@@ -185,5 +185,5 @@ def crossValidation(xArr,yArr,numVal=10):
     xMat = mat(xArr); yMat=mat(yArr).T
     meanX = mean(xMat,0); varX = var(xMat,0)
     unReg = bestWeights/varX
-    print "the best model from Ridge Regression is:\n",unReg
-    print "with constant term: ",-1*sum(multiply(meanX,unReg)) + mean(yMat)
+    print("the best model from Ridge Regression is:\n",unReg)
+    print("with constant term: ",-1*sum(multiply(meanX,unReg)) + mean(yMat))
