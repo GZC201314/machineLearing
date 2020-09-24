@@ -19,3 +19,5 @@ ax.axis([-60,60,0,1])
 plt.xlabel('x')
 plt.ylabel('Sigmoid(x)')
 show()
+
+

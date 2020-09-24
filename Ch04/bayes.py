@@ -75,7 +75,7 @@ def testingNB():
     for postinDoc in listOPosts:
         trainMat.append(setOfWords2Vec(myVocabList, postinDoc))
     p0V,p1V,pAb = trainNB0(array(trainMat),array(listClasses))
-    testEntry = ['love', 'my', 'dalmation']
+    testEntry = ['love', 'my ', 'dalmation']
     thisDoc = array(setOfWords2Vec(myVocabList, testEntry))
     print(testEntry,'classified as: ',classifyNB(thisDoc,p0V,p1V,pAb))
     testEntry = ['stupid', 'garbage']
