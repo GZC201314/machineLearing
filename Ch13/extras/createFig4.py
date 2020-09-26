@@ -6,8 +6,7 @@ Created on Jun 14, 2011
 from numpy import *
 import matplotlib
 import matplotlib.pyplot as plt
-import pca
-
+import Ch13.pca as pca
 dataMat = pca.replaceNanWithMean()
 
 #below is a quick hack copied from pca.pca()

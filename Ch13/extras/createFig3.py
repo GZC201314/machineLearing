@@ -6,8 +6,7 @@ Created on Jun 1, 2011
 from numpy import *
 import matplotlib
 import matplotlib.pyplot as plt
-import pca
-
+import Ch13.pca as pca
 n = 1000 #number of points to create
 xcord0 = []; ycord0 = []
 xcord1 = []; ycord1 = []

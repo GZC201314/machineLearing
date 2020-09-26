@@ -115,7 +115,7 @@ def stageWise(xArr,yArr,eps=0.01,numIt=100):
     return returnMat
 
 def scrapePage(inFile,outFile,yr,numPce,origPrc):
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
     fr = open(inFile); fw=open(outFile,'a') #a is append mode writing
     soup = BeautifulSoup(fr.read())
     i=1

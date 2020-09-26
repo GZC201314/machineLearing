@@ -6,7 +6,7 @@ Created on Dec 13, 2010
 from numpy import *
 import matplotlib
 import matplotlib.pyplot as plt
-datMat = matrix([[ 1. ,  2.1],
+datMat = mat([[ 1. ,  2.1],
         [ 1.5,  1.6],
         [ 1.3,  1. ],
         [ 1. ,  1. ],

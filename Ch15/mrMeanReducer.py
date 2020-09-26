@@ -31,4 +31,4 @@ meanSq = cumSumSq/cumN
 
 #output size, mean, mean(square values)
 print("%d\t%f\t%f" % (cumN, mean, meanSq))
-print("report: still alive", file=sys.stderr)
+# print("report: still alive", file=sys.stderr)

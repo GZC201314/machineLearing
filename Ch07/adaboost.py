@@ -6,7 +6,7 @@ Adaboost is short for Adaptive Boosting
 from numpy import *
 
 def loadSimpData():
-    datMat = matrix([[ 1. ,  2.1],
+    datMat = mat([[ 1. ,  2.1],
         [ 2. ,  1.1],
         [ 1.3,  1. ],
         [ 1. ,  1. ],

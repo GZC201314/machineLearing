@@ -6,8 +6,7 @@ Created on Jun 1, 2011
 from numpy import *
 import matplotlib
 import matplotlib.pyplot as plt
-import pca
-
+import Ch13.pca as pca
 dataMat = pca.loadDataSet('testSet.txt')
 lowDMat, reconMat = pca.pca(dataMat, 1)
 
